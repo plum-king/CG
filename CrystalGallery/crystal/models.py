@@ -61,7 +61,7 @@ class User(AbstractBaseUser):
 class Listing(models.Model):
     DEFAULT_USER = 1
     name = models.CharField(max_length = 100, blank = False)
-    initial = models.IntegerField()
+    initial = models.IntegerField() #제한 없는 거 고쳐야 함
     user = models.ForeignKey(User, blank = False, on_delete = models.CASCADE, default = DEFAULT_USER)
     display_picture= models.FileField(upload_to='images/', blank=True)  
     explain = models.TextField(default = '')
