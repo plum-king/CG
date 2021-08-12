@@ -78,7 +78,7 @@ class Listing(models.Model):
 class Bid(models.Model):
     user = models.ForeignKey(User, blank = False, on_delete = models.CASCADE)
     listing = models.ForeignKey(Listing, blank = False, on_delete = models.CASCADE)
-    highest_bid = models.IntegerField()
+    highest_bid = models.IntegerField() # blank = False
     added = models.DateTimeField(auto_now = True)
     
     def __str__(self):
