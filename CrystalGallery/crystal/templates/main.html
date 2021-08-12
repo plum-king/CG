@@ -233,7 +233,11 @@ crystalgallery
               Coin allows you to participate in the auction or bid for a painting.<br>
               Your paintings can also be auctioned off with coins by others.</span></p>
           <p class="lead">
+            {% if user.is_authenticated %}
             <a href="{% url 'mypage' %}" class="btn btn-outline-secondary">My page</a>
+            {% else %}
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary">My page</a>
+            {% endif %}
           </p>
         </div>
         <div class="col-md-6">
@@ -252,7 +256,11 @@ crystalgallery
               You can see at a glance what you are going to submit to the auction <br>
               and what you bid for at the auction.</span></p>
           <p class="lead">
+            {% if user.is_authenticated %}
             <a href="{% url 'mygallery' %}" class="btn btn-outline-secondary">My gallery</a>
+            {% else %}
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary">My gallery</a>
+            {% endif %}
           </p>
         </div>
       </div>
